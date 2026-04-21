@@ -1,0 +1,13 @@
+{
+  "data" : [
+    {
+      "filename" : "hu.counties.v1.json",
+      "idiom" : "universal",
+      "universal-type-identifier" : "public.json"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

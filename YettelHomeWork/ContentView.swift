@@ -8,28 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var viewModel = HomeViewModel()
+    @State private var viewModel: VignetteViewModel
+    private let dependencies: AppDependencies
     @State private var selectedNationalType: String?
 
+    init(dependencies: AppDependencies) {
+        self.dependencies = dependencies
+        _viewModel = State(initialValue: VignetteViewModel(dependencies: dependencies))
+    }
+
     var body: some View {
-        ZStack {
-            Color(red: 0.84, green: 0.83, blue: 0.90)
-                .ignoresSafeArea()
+        NavigationStack {
+            ZStack {
+                AppTheme.pageBackground
+                    .ignoresSafeArea()
 
-            ScrollView {
-                VStack(alignment: .leading, spacing: 18) {
-                    Text("Highway")
-                        .font(.system(size: 22, weight: .medium, design: .rounded))
-                        .foregroundStyle(Color(red: 0.36, green: 0.35, blue: 0.42))
-
-                    headerBar
-                    homeCard
-                    countyRow
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 18) {
+                        homeCard
+                        countyRow
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.top, 16)
+                    .padding(.bottom, 24)
                 }
-                .padding(.horizontal, 20)
-                .padding(.top, 20)
-                .padding(.bottom, 32)
             }
+            .navigationTitle(String(localized: "common.title.e_vignette"))
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(AppTheme.accentLime, for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
         }
         .task {
             guard viewModel.vehicle == nil || viewModel.highwayInfo == nil else { return }
@@ -40,61 +47,66 @@ struct ContentView: View {
         }
     }
 
-    private var headerBar: some View {
-        HStack(spacing: 12) {
-            Image(systemName: "arrow.left")
-                .font(.system(size: 18, weight: .regular))
-            Text("E-matrica")
-                .font(.system(size: 22, weight: .bold, design: .rounded))
-            Spacer(minLength: 0)
-        }
-        .foregroundStyle(Color(red: 0.02, green: 0.15, blue: 0.28))
-        .padding(.horizontal, 22)
-        .padding(.vertical, 20)
-        .background(Color(red: 0.73, green: 1.00, blue: 0.00))
-        .clipShape(.rect(cornerRadius: 24))
-    }
-
     private var homeCard: some View {
         VStack(alignment: .leading, spacing: 14) {
             vehicleCard
+            nationalVignettesCard
+        }
+    }
 
-            VStack(alignment: .leading, spacing: 12) {
-                Text("Orszagos matricak")
-                    .font(.system(size: 22, weight: .bold, design: .rounded))
-                    .foregroundStyle(Color(red: 0.02, green: 0.15, blue: 0.28))
+    private var nationalVignettesCard: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("home.section.national_vignettes")
+                .font(.system(size: 22, weight: .bold, design: .rounded))
+                .foregroundStyle(AppTheme.primaryText)
 
-                if viewModel.isLoading {
-                    ProgressView()
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .padding(.vertical, 20)
-                } else if let errorMessage = viewModel.errorMessage {
-                    Text(errorMessage)
-                        .font(.system(size: 10, weight: .medium, design: .rounded))
-                        .foregroundStyle(.red)
-                } else {
-                    ForEach(viewModel.nationalVignettes) { vignette in
-                        nationalOptionRow(vignette)
-                    }
+            if viewModel.isLoading {
+                ProgressView()
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding(.vertical, 20)
+            } else if let errorMessage = viewModel.errorMessage {
+                Text(errorMessage)
+                    .font(.system(size: 10, weight: .medium, design: .rounded))
+                    .foregroundStyle(.red)
+            } else {
+                ForEach(viewModel.nationalVignettes) { vignette in
+                    nationalOptionRow(vignette)
                 }
+            }
 
-                Button {
+            if let selectedVignette = viewModel.selectedNationalVignette(type: selectedNationalType) {
+                NavigationLink {
+                    NationalPurchaseConfirmationView(
+                        vignette: selectedVignette,
+                        vehiclePlate: viewModel.vehicle?.plate ?? "",
+                        orderCategory: viewModel.orderCategory,
+                        purchaseService: dependencies.purchaseService
+                    )
                 } label: {
-                    Text("Vasarlas")
+                    Text("common.button.purchase")
                         .font(.system(size: 22, weight: .bold, design: .rounded))
                         .foregroundStyle(.white)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 16)
-                        .background(Color(red: 0.02, green: 0.15, blue: 0.28))
+                    .background(AppTheme.primaryButton)
                         .clipShape(.capsule)
                 }
+                .buttonStyle(.plain)
+            } else {
+                Button {} label: {
+                    Text("common.button.purchase")
+                        .font(.system(size: 22, weight: .bold, design: .rounded))
+                        .foregroundStyle(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 16)
+                        .background(AppTheme.primaryButton.opacity(0.45))
+                        .clipShape(.capsule)
+                }
+                .disabled(true)
             }
-            .padding(16)
-            .background(Color.white)
-            .clipShape(.rect(cornerRadius: 18))
         }
-        .padding(14)
-        .background(Color(red: 0.91, green: 0.91, blue: 0.93))
+        .padding(16)
+        .background(AppTheme.surface)
         .clipShape(.rect(cornerRadius: 18))
     }
 
@@ -102,22 +114,23 @@ struct ContentView: View {
         HStack(spacing: 12) {
             Image(systemName: "car.fill")
                 .font(.system(size: 28, weight: .semibold))
-                .foregroundStyle(Color(red: 0.02, green: 0.15, blue: 0.28))
+                .foregroundStyle(AppTheme.primaryText)
                 .frame(width: 52, height: 52)
 
             VStack(alignment: .leading, spacing: 4) {
                 Text((viewModel.vehicle?.plate ?? "ABC 123").uppercased())
                     .font(.system(size: 22, weight: .bold, design: .rounded))
-                    .foregroundStyle(Color(red: 0.02, green: 0.15, blue: 0.28))
+                    .foregroundStyle(AppTheme.primaryText)
                 Text(viewModel.vehicle?.name ?? "Michael Scott")
                     .font(.system(size: 18, weight: .regular, design: .rounded))
-                    .foregroundStyle(Color(red: 0.20, green: 0.27, blue: 0.34))
+                    .foregroundStyle(AppTheme.secondaryText)
             }
             Spacer()
         }
+        .frame(minHeight: 72)
         .padding(16)
-        .background(Color.white)
-        .clipShape(.rect(cornerRadius: 14))
+        .background(AppTheme.surface)
+        .clipShape(.rect(cornerRadius: AppTheme.cornerSmall))
     }
 
     private func nationalOptionRow(_ vignette: NationalVignetteOption) -> some View {
@@ -129,54 +142,64 @@ struct ContentView: View {
             HStack(spacing: 14) {
                 ZStack {
                     Circle()
-                        .stroke(Color(red: 0.82, green: 0.84, blue: 0.87), lineWidth: 3)
+                        .stroke(Color.figmaFillUV5OR5, lineWidth: 2)
                         .frame(width: 34, height: 34)
                     if isSelected {
                         Circle()
-                            .fill(Color(red: 0.02, green: 0.15, blue: 0.28))
+                            .fill(AppTheme.primaryText)
                             .frame(width: 19, height: 19)
                     }
                 }
 
                 Text(vignette.displayName)
                     .font(.system(size: 18, weight: .semibold, design: .rounded))
-                    .foregroundStyle(Color(red: 0.02, green: 0.15, blue: 0.28))
+                    .foregroundStyle(AppTheme.primaryText)
 
                 Spacer(minLength: 8)
 
                 Text(vignette.priceText)
                     .font(.system(size: 18, weight: .bold, design: .rounded))
-                    .foregroundStyle(Color(red: 0.02, green: 0.15, blue: 0.28))
+                    .foregroundStyle(AppTheme.primaryText)
             }
             .padding(.horizontal, 14)
             .padding(.vertical, 16)
-            .background(Color.white)
+            .background(AppTheme.surface)
             .overlay(
-                RoundedRectangle(cornerRadius: 11)
-                    .stroke(isSelected ? Color(red: 0.02, green: 0.15, blue: 0.28) : Color(red: 0.82, green: 0.84, blue: 0.87), lineWidth: 3)
+                RoundedRectangle(cornerRadius: 7)
+                    .stroke(isSelected ? AppTheme.primaryText : Color.figmaFillUV5OR5, lineWidth: 2)
             )
-            .clipShape(.rect(cornerRadius: 11))
+            .clipShape(.rect(cornerRadius: 7))
         }
         .buttonStyle(.plain)
     }
 
     private var countyRow: some View {
-        HStack {
-            Text("Eves varmegyei matricak")
-                .font(.system(size: 22, weight: .bold, design: .rounded))
-                .foregroundStyle(Color(red: 0.02, green: 0.15, blue: 0.28))
-            Spacer(minLength: 8)
-            Image(systemName: "chevron.right")
-                .font(.system(size: 16, weight: .bold))
-                .foregroundStyle(Color(red: 0.02, green: 0.15, blue: 0.28))
+        NavigationLink {
+            CountySelectionView(
+                viewModel: CountySelectionViewModel(input: viewModel.countySelectionInput),
+                purchaseService: dependencies.purchaseService
+            )
+        } label: {
+            HStack {
+                Text("home.section.county_vignettes")
+                    .font(.system(size: 22, weight: .bold, design: .rounded))
+                    .foregroundStyle(AppTheme.primaryText)
+                Spacer(minLength: 8)
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 16, weight: .bold))
+                    .foregroundStyle(AppTheme.primaryText)
+            }
+            .padding(.horizontal, 16)
+            .padding(.vertical, 20)
+            .frame(minHeight: 72)
+            .background(AppTheme.surface)
+            .clipShape(.rect(cornerRadius: AppTheme.cornerMedium))
         }
-        .padding(.horizontal, 20)
-        .padding(.vertical, 20)
-        .background(Color.white)
-        .clipShape(.rect(cornerRadius: 18))
+        .buttonStyle(.plain)
+        .accessibilityIdentifier("home.countyFlowButton")
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(dependencies: .live)
 }

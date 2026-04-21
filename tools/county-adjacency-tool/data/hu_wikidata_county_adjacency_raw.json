@@ -1,0 +1,1654 @@
+{
+  "head": {
+    "vars": [
+      "county",
+      "countyLabel",
+      "neighbor",
+      "neighborLabel"
+    ]
+  },
+  "results": {
+    "bindings": [
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q186195"
+        },
+        "neighbor": {:
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q181018"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Baranya County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Bács-Kiskun County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q186195"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q190522"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Baranya County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Somogy County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q186195"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q191625"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Baranya County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Tolna County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188895"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q185368"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Borsod-Abaúj-Zemplén County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Hajdú-Bihar County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188895"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q191604"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Borsod-Abaúj-Zemplén County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Heves County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188895"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q189655"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Borsod-Abaúj-Zemplén County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Jász-Nagykun-Szolnok County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188895"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q194273"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Borsod-Abaúj-Zemplén County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Nógrád County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188895"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q190518"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Borsod-Abaúj-Zemplén County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Szabolcs-Szatmár-Bereg County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q1781"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188612"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Budapest"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Pest County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q181018"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q186195"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Bács-Kiskun County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Baranya County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q181018"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q193031"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Bács-Kiskun County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Csongrád-Csanád County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q181018"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q187693"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Bács-Kiskun County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Fejér County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q181018"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q189655"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Bács-Kiskun County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Jász-Nagykun-Szolnok County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q181018"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188612"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Bács-Kiskun County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Pest County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q181018"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q191625"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Bács-Kiskun County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Tolna County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q191616"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q193031"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Békés County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Csongrád-Csanád County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q191616"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q185368"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Békés County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Hajdú-Bihar County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q191616"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q189655"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Békés County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Jász-Nagykun-Szolnok County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q193031"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q181018"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Csongrád-Csanád County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Bács-Kiskun County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q193031"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q191616"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Csongrád-Csanád County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Békés County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q193031"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q189655"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Csongrád-Csanád County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Jász-Nagykun-Szolnok County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q187693"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q181018"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Fejér County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Bács-Kiskun County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q187693"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q190018"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Fejér County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Komárom-Esztergom County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q187693"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188612"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Fejér County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Pest County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q187693"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q190522"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Fejér County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Somogy County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q187693"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q191625"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Fejér County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Tolna County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q187693"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188890"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Fejér County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Veszprém County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q187753"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q190018"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Győr-Moson-Sopron County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Komárom-Esztergom County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q187753"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q187677"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Győr-Moson-Sopron County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Vas County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q187753"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188890"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Győr-Moson-Sopron County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Veszprém County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q185368"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188895"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Hajdú-Bihar County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Borsod-Abaúj-Zemplén County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q185368"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q191616"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Hajdú-Bihar County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Békés County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q185368"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q189655"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Hajdú-Bihar County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Jász-Nagykun-Szolnok County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q185368"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q190518"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Hajdú-Bihar County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Szabolcs-Szatmár-Bereg County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q191604"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188895"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Heves County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Borsod-Abaúj-Zemplén County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q191604"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q189655"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Heves County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Jász-Nagykun-Szolnok County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q191604"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q194273"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Heves County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Nógrád County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q191604"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188612"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Heves County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Pest County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q189655"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188895"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Jász-Nagykun-Szolnok County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Borsod-Abaúj-Zemplén County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q189655"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q181018"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Jász-Nagykun-Szolnok County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Bács-Kiskun County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q189655"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q191616"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Jász-Nagykun-Szolnok County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Békés County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q189655"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q193031"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Jász-Nagykun-Szolnok County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Csongrád-Csanád County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q189655"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q185368"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Jász-Nagykun-Szolnok County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Hajdú-Bihar County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q189655"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q191604"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Jász-Nagykun-Szolnok County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Heves County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q189655"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188612"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Jász-Nagykun-Szolnok County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Pest County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q190018"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q187693"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Komárom-Esztergom County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Fejér County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q190018"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q187753"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Komárom-Esztergom County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Győr-Moson-Sopron County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q190018"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188612"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Komárom-Esztergom County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Pest County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q190018"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188890"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Komárom-Esztergom County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Veszprém County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q194273"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188895"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Nógrád County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Borsod-Abaúj-Zemplén County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q194273"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q191604"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Nógrád County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Heves County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q194273"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188612"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Nógrád County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Pest County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188612"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q1781"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Pest County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Budapest"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188612"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q181018"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Pest County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Bács-Kiskun County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188612"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q187693"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Pest County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Fejér County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188612"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q191604"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Pest County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Heves County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188612"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q189655"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Pest County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Jász-Nagykun-Szolnok County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188612"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q190018"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Pest County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Komárom-Esztergom County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188612"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q194273"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Pest County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Nógrád County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q190522"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q186195"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Somogy County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Baranya County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q190522"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q187693"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Somogy County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Fejér County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q190522"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q191625"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Somogy County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Tolna County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q190522"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188890"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Somogy County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Veszprém County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q190522"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q185374"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Somogy County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Zala County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q190518"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188895"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Szabolcs-Szatmár-Bereg County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Borsod-Abaúj-Zemplén County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q190518"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q185368"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Szabolcs-Szatmár-Bereg County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Hajdú-Bihar County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q191625"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q186195"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Tolna County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Baranya County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q191625"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q181018"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Tolna County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Bács-Kiskun County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q191625"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q187693"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Tolna County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Fejér County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q191625"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q190522"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Tolna County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Somogy County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q187677"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q187753"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Vas County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Győr-Moson-Sopron County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q187677"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188890"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Vas County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Veszprém County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q187677"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q185374"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Vas County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Zala County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188890"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q187693"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Veszprém County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Fejér County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188890"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q187753"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Veszprém County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Győr-Moson-Sopron County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188890"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q190018"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Veszprém County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Komárom-Esztergom County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188890"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q190522"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Veszprém County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Somogy County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188890"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q187677"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Veszprém County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Vas County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188890"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q185374"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Veszprém County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Zala County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q185374"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q190522"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Zala County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Somogy County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q185374"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q187677"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Zala County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Vas County"
+        }
+      },
+      {
+        "county": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q185374"
+        },
+        "neighbor": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q188890"
+        },
+        "countyLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Zala County"
+        },
+        "neighborLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Veszprém County"
+        }
+      }
+    ]
+  }
+}

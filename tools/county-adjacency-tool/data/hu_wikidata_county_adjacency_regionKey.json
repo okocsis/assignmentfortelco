@@ -1,0 +1,136 @@
+{
+  "adjacency" : {
+    "hu.bacs_kiskun" : [
+      "hu.baranya",
+      "hu.csongrad",
+      "hu.fejer",
+      "hu.jasz_nagykun_szolnok",
+      "hu.pest",
+      "hu.tolna"
+    ],
+    "hu.baranya" : [
+      "hu.bacs_kiskun",
+      "hu.somogy",
+      "hu.tolna"
+    ],
+    "hu.bekes" : [
+      "hu.csongrad",
+      "hu.hajdu_bihar",
+      "hu.jasz_nagykun_szolnok"
+    ],
+    "hu.borsod_abauj_zemplen" : [
+      "hu.hajdu_bihar",
+      "hu.heves",
+      "hu.jasz_nagykun_szolnok",
+      "hu.nograd",
+      "hu.szabolcs_szatmar_bereg"
+    ],
+    "hu.budapest" : [
+      "hu.pest"
+    ],
+    "hu.csongrad" : [
+      "hu.bacs_kiskun",
+      "hu.bekes",
+      "hu.jasz_nagykun_szolnok"
+    ],
+    "hu.fejer" : [
+      "hu.bacs_kiskun",
+      "hu.komarom_esztergom",
+      "hu.pest",
+      "hu.somogy",
+      "hu.tolna",
+      "hu.veszprem"
+    ],
+    "hu.gyor_moson_sopron" : [
+      "hu.komarom_esztergom",
+      "hu.vas",
+      "hu.veszprem"
+    ],
+    "hu.hajdu_bihar" : [
+      "hu.bekes",
+      "hu.borsod_abauj_zemplen",
+      "hu.jasz_nagykun_szolnok",
+      "hu.szabolcs_szatmar_bereg"
+    ],
+    "hu.heves" : [
+      "hu.borsod_abauj_zemplen",
+      "hu.jasz_nagykun_szolnok",
+      "hu.nograd",
+      "hu.pest"
+    ],
+    "hu.jasz_nagykun_szolnok" : [
+      "hu.bacs_kiskun",
+      "hu.bekes",
+      "hu.borsod_abauj_zemplen",
+      "hu.csongrad",
+      "hu.hajdu_bihar",
+      "hu.heves",
+      "hu.pest"
+    ],
+    "hu.komarom_esztergom" : [
+      "hu.fejer",
+      "hu.gyor_moson_sopron",
+      "hu.pest",
+      "hu.veszprem"
+    ],
+    "hu.nograd" : [
+      "hu.borsod_abauj_zemplen",
+      "hu.heves",
+      "hu.pest"
+    ],
+    "hu.pest" : [
+      "hu.bacs_kiskun",
+      "hu.budapest",
+      "hu.fejer",
+      "hu.heves",
+      "hu.jasz_nagykun_szolnok",
+      "hu.komarom_esztergom",
+      "hu.nograd"
+    ],
+    "hu.somogy" : [
+      "hu.baranya",
+      "hu.fejer",
+      "hu.tolna",
+      "hu.veszprem",
+      "hu.zala"
+    ],
+    "hu.szabolcs_szatmar_bereg" : [
+      "hu.borsod_abauj_zemplen",
+      "hu.hajdu_bihar"
+    ],
+    "hu.tolna" : [
+      "hu.bacs_kiskun",
+      "hu.baranya",
+      "hu.fejer",
+      "hu.somogy"
+    ],
+    "hu.vas" : [
+      "hu.gyor_moson_sopron",
+      "hu.veszprem",
+      "hu.zala"
+    ],
+    "hu.veszprem" : [
+      "hu.fejer",
+      "hu.gyor_moson_sopron",
+      "hu.komarom_esztergom",
+      "hu.somogy",
+      "hu.vas",
+      "hu.zala"
+    ],
+    "hu.zala" : [
+      "hu.somogy",
+      "hu.vas",
+      "hu.veszprem"
+    ]
+  },
+  "meta" : {
+    "countryQID" : "Q28",
+    "language" : "en",
+    "note" : "Use --qid-region-map for stable app-specific regionKey mapping.",
+    "query" : "SELECT ?county ?countyLabel ?neighbor ?neighborLabel WHERE {\n  VALUES ?county { wd:Q186195 wd:Q188895 wd:Q181018 wd:Q191616 wd:Q193031 wd:Q187693 wd:Q187753 wd:Q185368 wd:Q191604 wd:Q189655 wd:Q190018 wd:Q194273 wd:Q188612 wd:Q190522 wd:Q190518 wd:Q191625 wd:Q187677 wd:Q188890 wd:Q185374 wd:Q1781 }\n  VALUES ?neighbor { wd:Q186195 wd:Q188895 wd:Q181018 wd:Q191616 wd:Q193031 wd:Q187693 wd:Q187753 wd:Q185368 wd:Q191604 wd:Q189655 wd:Q190018 wd:Q194273 wd:Q188612 wd:Q190522 wd:Q190518 wd:Q191625 wd:Q187677 wd:Q188890 wd:Q185374 wd:Q1781 }\n  ?county wdt:P47 ?neighbor .\n  FILTER(?county != ?neighbor)\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"en,en\". }\n}\nORDER BY ?countyLabel ?neighborLabel",
+    "retrievedAtUtc" : "2026-04-20T14:07:48Z",
+    "source" : "Wikidata SPARQL endpoint",
+    "sourceURL" : "https:\/\/query.wikidata.org\/",
+    "subdivisionClassQID" : "Q188604"
+  }
+}

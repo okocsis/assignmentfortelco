@@ -1,0 +1,245 @@
+{
+  "countryCode" : "HU",
+  "regions" : [
+    {
+      "associatedVignetteTypes" : [
+        "YEAR_11"
+      ],
+      "neighbors" : [
+        "hu.baranya",
+        "hu.csongrad",
+        "hu.jasz_nagykun_szolnok",
+        "hu.pest",
+        "hu.tolna"
+      ],
+      "regionKey" : "hu.bacs_kiskun"
+    },
+    {
+      "associatedVignetteTypes" : [
+        "YEAR_12"
+      ],
+      "neighbors" : [
+        "hu.bacs_kiskun",
+        "hu.somogy",
+        "hu.tolna"
+      ],
+      "regionKey" : "hu.baranya"
+    },
+    {
+      "associatedVignetteTypes" : [
+        "YEAR_13"
+      ],
+      "neighbors" : [
+        "hu.csongrad",
+        "hu.hajdu_bihar",
+        "hu.jasz_nagykun_szolnok"
+      ],
+      "regionKey" : "hu.bekes"
+    },
+    {
+      "associatedVignetteTypes" : [
+        "YEAR_14"
+      ],
+      "neighbors" : [
+        "hu.hajdu_bihar",
+        "hu.heves",
+        "hu.jasz_nagykun_szolnok",
+        "hu.nograd",
+        "hu.szabolcs_szatmar_bereg"
+      ],
+      "regionKey" : "hu.borsod_abauj_zemplen"
+    },
+    {
+      "associatedVignetteTypes" : [
+
+      ],
+      "neighbors" : [
+        "hu.pest"
+      ],
+      "regionKey" : "hu.budapest"
+    },
+    {
+      "associatedVignetteTypes" : [
+        "YEAR_15"
+      ],
+      "neighbors" : [
+        "hu.bacs_kiskun",
+        "hu.bekes",
+        "hu.jasz_nagykun_szolnok"
+      ],
+      "regionKey" : "hu.csongrad"
+    },
+    {
+      "associatedVignetteTypes" : [
+        "YEAR_16"
+      ],
+      "neighbors" : [
+        "hu.komarom_esztergom",
+        "hu.pest",
+        "hu.tolna",
+        "hu.veszprem"
+      ],
+      "regionKey" : "hu.fejer"
+    },
+    {
+      "associatedVignetteTypes" : [
+        "YEAR_17"
+      ],
+      "neighbors" : [
+        "hu.komarom_esztergom",
+        "hu.vas",
+        "hu.veszprem"
+      ],
+      "regionKey" : "hu.gyor_moson_sopron"
+    },
+    {
+      "associatedVignetteTypes" : [
+        "YEAR_18"
+      ],
+      "neighbors" : [
+        "hu.bekes",
+        "hu.borsod_abauj_zemplen",
+        "hu.jasz_nagykun_szolnok",
+        "hu.szabolcs_szatmar_bereg"
+      ],
+      "regionKey" : "hu.hajdu_bihar"
+    },
+    {
+      "associatedVignetteTypes" : [
+        "YEAR_19"
+      ],
+      "neighbors" : [
+        "hu.borsod_abauj_zemplen",
+        "hu.jasz_nagykun_szolnok",
+        "hu.nograd",
+        "hu.pest"
+      ],
+      "regionKey" : "hu.heves"
+    },
+    {
+      "associatedVignetteTypes" : [
+        "YEAR_20"
+      ],
+      "neighbors" : [
+        "hu.bacs_kiskun",
+        "hu.bekes",
+        "hu.borsod_abauj_zemplen",
+        "hu.csongrad",
+        "hu.hajdu_bihar",
+        "hu.heves",
+        "hu.pest"
+      ],
+      "regionKey" : "hu.jasz_nagykun_szolnok"
+    },
+    {
+      "associatedVignetteTypes" : [
+        "YEAR_21"
+      ],
+      "neighbors" : [
+        "hu.fejer",
+        "hu.gyor_moson_sopron",
+        "hu.pest",
+        "hu.veszprem"
+      ],
+      "regionKey" : "hu.komarom_esztergom"
+    },
+    {
+      "associatedVignetteTypes" : [
+        "YEAR_22"
+      ],
+      "neighbors" : [
+        "hu.borsod_abauj_zemplen",
+        "hu.heves",
+        "hu.pest"
+      ],
+      "regionKey" : "hu.nograd"
+    },
+    {
+      "associatedVignetteTypes" : [
+        "YEAR_23"
+      ],
+      "neighbors" : [
+        "hu.bacs_kiskun",
+        "hu.budapest",
+        "hu.fejer",
+        "hu.heves",
+        "hu.jasz_nagykun_szolnok",
+        "hu.komarom_esztergom",
+        "hu.nograd"
+      ],
+      "regionKey" : "hu.pest"
+    },
+    {
+      "associatedVignetteTypes" : [
+        "YEAR_24"
+      ],
+      "neighbors" : [
+        "hu.baranya",
+        "hu.tolna",
+        "hu.veszprem",
+        "hu.zala"
+      ],
+      "regionKey" : "hu.somogy"
+    },
+    {
+      "associatedVignetteTypes" : [
+        "YEAR_25"
+      ],
+      "neighbors" : [
+        "hu.borsod_abauj_zemplen",
+        "hu.hajdu_bihar"
+      ],
+      "regionKey" : "hu.szabolcs_szatmar_bereg"
+    },
+    {
+      "associatedVignetteTypes" : [
+        "YEAR_26"
+      ],
+      "neighbors" : [
+        "hu.bacs_kiskun",
+        "hu.baranya",
+        "hu.fejer",
+        "hu.somogy"
+      ],
+      "regionKey" : "hu.tolna"
+    },
+    {
+      "associatedVignetteTypes" : [
+        "YEAR_27"
+      ],
+      "neighbors" : [
+        "hu.gyor_moson_sopron",
+        "hu.veszprem",
+        "hu.zala"
+      ],
+      "regionKey" : "hu.vas"
+    },
+    {
+      "associatedVignetteTypes" : [
+        "YEAR_28"
+      ],
+      "neighbors" : [
+        "hu.fejer",
+        "hu.gyor_moson_sopron",
+        "hu.komarom_esztergom",
+        "hu.somogy",
+        "hu.vas",
+        "hu.zala"
+      ],
+      "regionKey" : "hu.veszprem"
+    },
+    {
+      "associatedVignetteTypes" : [
+        "YEAR_29"
+      ],
+      "neighbors" : [
+        "hu.somogy",
+        "hu.vas",
+        "hu.veszprem"
+      ],
+      "regionKey" : "hu.zala"
+    }
+  ],
+  "schemaVersion" : 1,
+  "svgAssetName" : "CountyMapSVG"
+}

@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yettelhomework.local/schemas/map.config.schema.json",
+  "title": "Map Config",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "mapId",
+    "countryCode",
+    "inputs",
+    "outputs"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "mapId": {
+      "type": "string",
+      "pattern": "^[a-z0-9._-]+$"
+    },
+    "countryCode": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$"
+    },
+    "displayName": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "object",
+      "required": [
+        "svgPath",
+        "descriptorPath"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "svgPath": {
+          "type": "string"
+        },
+        "descriptorPath": {
+          "type": "string"
+        }
+      }
+    },
+    "outputs": {
+      "type": "object",
+      "required": [
+        "assetCatalogPath",
+        "svgDatasetName",
+        "svgFileName",
+        "descriptorDatasetName",
+        "descriptorFileName"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "assetCatalogPath": {
+          "type": "string"
+        },
+        "svgDatasetName": {
+          "type": "string"
+        },
+        "svgFileName": {
+          "type": "string"
+        },
+        "descriptorDatasetName": {
+          "type": "string"
+        },
+        "descriptorFileName": {
+          "type": "string"
+        }
+      }
+    },
+    "adjacency": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "minSharedLength": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "snapTolerance": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "curveSubdivisions": {
+          "type": "integer",
+          "minimum": 2
+        }
+      }
+    }
+  }
+}

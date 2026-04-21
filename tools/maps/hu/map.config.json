@@ -1,0 +1,23 @@
+{
+  "$schema": "../map.config.schema.json",
+  "schemaVersion": 1,
+  "mapId": "hu.counties",
+  "countryCode": "HU",
+  "displayName": "Hungary Counties",
+  "inputs": {
+    "svgPath": "map.svg",
+    "descriptorPath": "hu.counties.v1.json"
+  },
+  "outputs": {
+    "assetCatalogPath": "../../../YettelHomeWork/Assets.xcassets",
+    "svgDatasetName": "CountyMapSVG",
+    "svgFileName": "countyMap.svg",
+    "descriptorDatasetName": "HUCountiesDescriptor",
+    "descriptorFileName": "hu.counties.v1.json"
+  },
+  "adjacency": {
+    "minSharedLength": 1.0,
+    "snapTolerance": 0.05,
+    "curveSubdivisions": 20
+  }
+}
