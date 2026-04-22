@@ -53,16 +53,13 @@ final class CountySelectionViewModel {
         let directlyConnected = selectedBeforeInsert.isEmpty
             || selectedBeforeInsert.contains(where: { isDirectCountyNeighbor(countyID, $0) })
 
-        if directlyConnected {
+        if directlyConnected == false {
+            let countyName = input.countyVignettes.first(where: { $0.id == countyID })?.name ?? countyID
+            let warningFormat = String(localized: "county.warning.disconnected_selection")
+            connectivityWarning = String(format: warningFormat, locale: .current, countyName)
+        } else {
             connectivityWarning = nil
-            return
         }
-
-        selectedCountyIDs.remove(countyID)
-
-        let countyName = input.countyVignettes.first(where: { $0.id == countyID })?.name ?? countyID
-        let warningFormat = String(localized: "county.warning.disconnected_selection")
-        connectivityWarning = String(format: warningFormat, locale: .current, countyName)
     }
 
     private func isDirectCountyNeighbor(_ lhs: String, _ rhs: String) -> Bool {
