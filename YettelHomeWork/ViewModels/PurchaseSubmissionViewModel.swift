@@ -35,3 +35,18 @@ final class PurchaseSubmissionViewModel {
         }
     }
 }
+
+struct PurchaseResultPayload {
+    let isSuccess: Bool
+    let message: String
+
+    static func from(response: OrderResponse) -> PurchaseResultPayload {
+        let isSuccess = response.statusCode.uppercased() == "OK"
+        let message = response.message ?? ""
+        return PurchaseResultPayload(isSuccess: isSuccess, message: message)
+    }
+
+    static func failure(message: String) -> PurchaseResultPayload {
+        PurchaseResultPayload(isSuccess: false, message: message)
+    }
+}

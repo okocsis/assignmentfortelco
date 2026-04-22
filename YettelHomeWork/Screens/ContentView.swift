@@ -76,10 +76,12 @@ struct ContentView: View {
 
             if let selectedVignette = viewModel.selectedNationalVignette(type: selectedNationalType) {
                 NavigationLink {
-                    NationalPurchaseConfirmationView(
-                        vignette: selectedVignette,
-                        vehiclePlate: viewModel.vehicle?.plate ?? "",
-                        orderCategory: viewModel.orderCategory,
+                    PurchaseConfirmationView(
+                        scenario: .national(
+                            vignette: selectedVignette,
+                            vehiclePlate: viewModel.vehicle?.plate ?? "",
+                            orderCategory: viewModel.orderCategory
+                        ),
                         purchaseService: dependencies.purchaseService
                     )
                 } label: {

@@ -77,10 +77,12 @@ struct CountySelectionView: View {
                 .disabled(true)
             } else {
                 NavigationLink {
-                    CountyPurchaseConfirmationView(
-                        selectedCounties: viewModel.selectedCounties,
-                        vehiclePlate: viewModel.input.vehiclePlate,
-                        orderCategory: viewModel.input.orderCategory,
+                    PurchaseConfirmationView(
+                        scenario: .county(
+                            selectedCounties: viewModel.selectedCounties,
+                            vehiclePlate: viewModel.input.vehiclePlate,
+                            orderCategory: viewModel.input.orderCategory
+                        ),
                         purchaseService: purchaseService
                     )
                 } label: {
