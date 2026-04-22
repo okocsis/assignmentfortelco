@@ -16,6 +16,10 @@ extension Color {
     static let figmaFillQ6EL9A = Color(hex: 0xFF5728)
     static let figmaFillDS9Q7E = Color(hex: 0xF2F4F5)
 
+    // MARK: - County map fills
+    static let figmaCountyMapSelectedFill = Color(hex: 0xBAFF00)
+    static let figmaCountyMapUnselectedFill = Color(hex: 0xC4DEED)
+
     init(hex: UInt32, alpha: Double = 1.0) {
         let red = Double((hex >> 16) & 0xFF) / 255.0
         let green = Double((hex >> 8) & 0xFF) / 255.0

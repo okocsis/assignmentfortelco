@@ -102,10 +102,7 @@ struct OrderResultScreen: View {
             .background(.clear)
             .zIndex(10)
         }
-        .navigationTitle(String(localized: "common.title.e_vignette"))
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbarBackground(payload.isSuccess ? AppTheme.accentLime : AppTheme.pageBackground, for: .navigationBar)
-        .toolbarBackground(.visible, for: .navigationBar)
+        .navigationBarBackButtonHidden()
     }
 
     private var celebrationConfetti: some View {

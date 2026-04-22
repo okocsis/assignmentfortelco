@@ -9,8 +9,8 @@ struct CountyMapView: View {
     private enum MapMetrics {
         static let aspectRatio: CGFloat = 1.55
         static let borderWidth: CGFloat = 1.8
-        static let selectedFill = Color(red: 0.73, green: 1.00, blue: 0.00)
-        static let unselectedFill = Color(red: 0.77, green: 0.87, blue: 0.93)
+        static let selectedFill = Color.figmaCountyMapSelectedFill
+        static let unselectedFill = Color.figmaCountyMapUnselectedFill
     }
 
     var body: some View {
