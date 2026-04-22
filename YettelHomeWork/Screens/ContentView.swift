@@ -118,10 +118,10 @@ struct ContentView: View {
                 .frame(width: 52, height: 52)
 
             VStack(alignment: .leading, spacing: 4) {
-                Text((viewModel.vehicle?.plate ?? "ABC 123").uppercased())
+                Text((viewModel.vehicle?.plate ?? "null").uppercased())
                     .font(.system(size: 22, weight: .bold, design: .rounded))
                     .foregroundStyle(AppTheme.primaryText)
-                Text(viewModel.vehicle?.name ?? "Michael Scott")
+                Text(viewModel.vehicle?.name ?? "null")
                     .font(.system(size: 18, weight: .regular, design: .rounded))
                     .foregroundStyle(AppTheme.secondaryText)
             }
@@ -201,5 +201,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView(dependencies: .live)
+    ContentView(dependencies: .mock)
 }

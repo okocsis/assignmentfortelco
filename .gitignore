@@ -93,6 +93,7 @@ playground.xcworkspace
 # --- Configuration ---
 # Exclude environment and editor-specific configurations.
 .env
+Config/Env.local.xcconfig
 .vscode/
 *.code-snippets
 figma screens
@@ -100,3 +101,6 @@ figma screens
 mobile_developer s 7
 opencode.json
 skills-lock.json
+plans
+*.xcbkptlist
+YettelHomeWork.xcodeproj/xcuserdata

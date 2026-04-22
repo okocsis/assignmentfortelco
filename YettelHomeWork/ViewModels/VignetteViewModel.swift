@@ -14,17 +14,13 @@ final class VignetteViewModel {
     private let dataService: VignetteDataService
 
     init(
-        apiClient: HighwayAPIClient = .live,
+        apiClient: any HighwayAPIClientProtocol,
         mapRepository: MapRepository
     ) {
         self.dataService = DefaultVignetteDataService(
             apiClient: apiClient,
             mapRepository: mapRepository
         )
-    }
-
-    convenience init() {
-        self.init(apiClient: .live, mapRepository: AssetMapRepository())
     }
 
     init(dependencies: AppDependencies) {

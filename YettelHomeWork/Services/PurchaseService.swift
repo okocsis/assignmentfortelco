@@ -3,7 +3,7 @@ protocol PurchaseService {
 }
 
 struct DefaultPurchaseService: PurchaseService {
-    let apiClient: HighwayAPIClient
+    let apiClient: any HighwayAPIClientProtocol
 
     func submitOrder(_ items: [OrderItem]) async throws(HighwayAPIError) -> OrderResponse {
         try await apiClient.placeOrder(items)

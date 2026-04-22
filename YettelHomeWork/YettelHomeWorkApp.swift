@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct YettelHomeWorkApp: App {
-    private let dependencies = AppDependencies.live
+    private let dependencies = AppDependencies.resolved()
 
     var body: some Scene {
         WindowGroup {

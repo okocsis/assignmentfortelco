@@ -44,6 +44,7 @@ struct CountySelectionView: View {
                 Text(connectivityWarning)
                     .font(.system(size: 14, weight: .medium, design: .rounded))
                     .foregroundStyle(.red)
+                    .accessibilityIdentifier("county.warning.disconnected")
             }
 
             VStack(spacing: 0) {
@@ -120,11 +121,32 @@ struct CountySelectionView: View {
                     .font(.system(size: 18, weight: .bold, design: .rounded))
                     .foregroundStyle(AppTheme.primaryText)
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.vertical, 9)
+            .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
         .accessibilityLabel("\(county.name), \(county.priceText)")
         .accessibilityIdentifier("county.row.\(county.id)")
+        .accessibilityValue(isSelected ? "selected" : "not_selected")
         .accessibilityAddTraits(isSelected ? [.isButton, .isSelected] : [.isButton])
     }
+}
+
+#Preview {
+    CountySelectionView(
+        viewModel: CountySelectionViewModel(
+            input: CountySelectionInput(
+                countyVignettes: [],
+                countyVignettePrice: 0,
+                countyAdjacencyByVignetteType: [:],
+                countyShapesByVignetteType: [:],
+                orderCategory: "",
+                vehiclePlate: ""
+            )
+        ),
+        purchaseService: DefaultPurchaseService(
+            apiClient: MockHighwayAPIClient()
+        )
+    )
 }

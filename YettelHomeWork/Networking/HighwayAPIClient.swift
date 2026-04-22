@@ -1,10 +1,20 @@
 import Foundation
 
-struct HighwayAPIClient {
+protocol HighwayAPIClientProtocol {
+    func fetchVehicle() async throws(HighwayAPIError) -> VehicleResponse
+    func fetchHighwayInfo() async throws(HighwayAPIError) -> HighwayInfoResponse
+    func placeOrder(_ orders: [OrderItem]) async throws(HighwayAPIError) -> OrderResponse
+    func send<Request: HighwayAPIRequest>(_ requestModel: Request) async throws(HighwayAPIError) -> Request.Response
+}
+
+struct HighwayAPIClient: HighwayAPIClientProtocol {
     let baseURL: URL
     let session: URLSession
 
-    init(baseURL: URL = URL(string: "http://192.168.11.146:8080")!, session: URLSession = .shared) {
+    init(
+        baseURL: URL,
+        session: URLSession = .shared
+    ) {
         self.baseURL = baseURL
         self.session = session
     }
@@ -64,6 +74,8 @@ struct HighwayAPIClient {
     }
 }
 
+
+
 protocol HighwayAPIRequest {
     associatedtype Payload: Encodable
     associatedtype Response: Decodable
@@ -82,6 +94,8 @@ struct FetchVehicleRequest: HighwayAPIRequest {
     let path = "/v1/highway/vehicle"
     let method: HTTPMethod = .get
     let payload: EmptyPayload? = nil
+
+    static let mock = FetchVehicleRequest()
 }
 
 struct FetchHighwayInfoRequest: HighwayAPIRequest {
@@ -91,6 +105,8 @@ struct FetchHighwayInfoRequest: HighwayAPIRequest {
     let path = "/v1/highway/info"
     let method: HTTPMethod = .get
     let payload: EmptyPayload? = nil
+
+    static let mock = FetchHighwayInfoRequest()
 }
 
 struct PlaceOrderRequest: HighwayAPIRequest {
@@ -100,10 +116,60 @@ struct PlaceOrderRequest: HighwayAPIRequest {
     let path = "/v1/highway/order"
     let method: HTTPMethod = .post
     let payload: OrderRequest?
+
+    static let mock = PlaceOrderRequest(payload: .mock)
 }
 
-extension HighwayAPIClient {
-    nonisolated static let live = HighwayAPIClient()
+
+struct MockHighwayAPIClient: HighwayAPIClientProtocol {
+    var vehicleResponse: VehicleResponse
+    var highwayInfoResponse: HighwayInfoResponse
+    var orderResponse: OrderResponse
+    var placeOrderHandler: (([OrderItem]) -> OrderResponse)?
+
+    init(
+        vehicleResponse: VehicleResponse = .mock,
+        highwayInfoResponse: HighwayInfoResponse = .mock,
+        orderResponse: OrderResponse = .mockSuccess,
+        placeOrderHandler: (([OrderItem]) -> OrderResponse)? = nil
+    ) {
+        self.vehicleResponse = vehicleResponse
+        self.highwayInfoResponse = highwayInfoResponse
+        self.orderResponse = orderResponse
+        self.placeOrderHandler = placeOrderHandler
+    }
+
+    func fetchVehicle() async throws(HighwayAPIError) -> VehicleResponse {
+        vehicleResponse
+    }
+
+    func fetchHighwayInfo() async throws(HighwayAPIError) -> HighwayInfoResponse {
+        highwayInfoResponse
+    }
+
+    func placeOrder(_ orders: [OrderItem]) async throws(HighwayAPIError) -> OrderResponse {
+        placeOrderHandler?(orders) ?? orderResponse
+    }
+
+    func send<Request: HighwayAPIRequest>(_ requestModel: Request) async throws(HighwayAPIError) -> Request.Response {
+        if requestModel is FetchVehicleRequest, let response = vehicleResponse as? Request.Response {
+            return response
+        }
+
+        if requestModel is FetchHighwayInfoRequest, let response = highwayInfoResponse as? Request.Response {
+            return response
+        }
+
+        if let placeOrderRequest = requestModel as? PlaceOrderRequest {
+            let orders = placeOrderRequest.payload?.highwayOrders ?? []
+            let response = placeOrderHandler?(orders) ?? orderResponse
+            if let typedResponse = response as? Request.Response {
+                return typedResponse
+            }
+        }
+
+        throw .invalidResponse
+    }
 }
 
 enum HTTPMethod: String {

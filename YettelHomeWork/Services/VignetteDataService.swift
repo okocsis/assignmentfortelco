@@ -12,7 +12,7 @@ protocol VignetteDataService {
 }
 
 struct DefaultVignetteDataService: VignetteDataService {
-    let apiClient: HighwayAPIClient
+    let apiClient: any HighwayAPIClientProtocol
     let mapRepository: MapRepository
 
     func loadInitialData() async throws(HighwayAPIError) -> VignetteLoadResult {

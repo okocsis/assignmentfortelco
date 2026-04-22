@@ -11,23 +11,6 @@
         }
       }
     },
-    "common.button.confirm" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Confirm"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Megerősítés"
-          }
-        }
-      }
-    },
     "common.button.cancel" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -41,6 +24,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mégsem"
+          }
+        }
+      }
+    },
+    "common.button.confirm" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirm"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Megerősítés"
           }
         }
       }
@@ -386,22 +386,8 @@
         }
       }
     },
-    "result.failure.title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Order failed"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "A rendelés sikertelen"
-          }
-        }
-      }
+    "not_selected" : {
+
     },
     "result.button.done" : {
       "extractionState" : "manual",
@@ -454,6 +440,23 @@
         }
       }
     },
+    "result.failure.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Order failed"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A rendelés sikertelen"
+          }
+        }
+      }
+    },
     "result.navigation_title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -467,6 +470,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Eredmény"
+          }
+        }
+      }
+    },
+    "result.success.message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You paid for\nthe vignettes\nsuccessfully!"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A matricákat\nsikeresen\nkifizetted!"
           }
         }
       }
@@ -488,22 +508,8 @@
         }
       }
     },
-    "result.success.message" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "You paid for\nthe vignettes\nsuccessfully!"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "A matricákat\nsikeresen\nkifizetted!"
-          }
-        }
-      }
+    "selected" : {
+
     }
   },
   "version" : "1.0"

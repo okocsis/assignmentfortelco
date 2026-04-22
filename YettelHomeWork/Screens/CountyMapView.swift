@@ -57,3 +57,9 @@ struct CountyMapView: View {
         return path
     }
 }
+
+#Preview {
+    CountyMapView(counties: [], mapShapes: [:], selectedCountyIDs: []) { _ in
+        
+    }
+}

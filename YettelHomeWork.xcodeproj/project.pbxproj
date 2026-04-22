@@ -27,6 +27,7 @@
 		A731E67C2F920E79001FABE1 /* YettelHomeWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YettelHomeWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A731E6892F920E7B001FABE1 /* YettelHomeWorkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YettelHomeWorkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A731E6932F920E7B001FABE1 /* YettelHomeWorkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YettelHomeWorkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B10000012F920E7B001FABE1 /* Config/Env.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config/Env.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -56,6 +57,11 @@
 		A731E6962F920E7B001FABE1 /* YettelHomeWorkUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = YettelHomeWorkUITests;
+			sourceTree = "<group>";
+		};
+		B10000032F920E7B001FABE1 /* Config */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -88,10 +94,12 @@
 		A731E6732F920E79001FABE1 = {
 			isa = PBXGroup;
 			children = (
+				B10000032F920E7B001FABE1 /* Config */,
 				A731E67E2F920E79001FABE1 /* YettelHomeWork */,
 				A731E68C2F920E7B001FABE1 /* YettelHomeWorkTests */,
 				A731E6962F920E7B001FABE1 /* YettelHomeWorkUITests */,
 				A731E67D2F920E79001FABE1 /* Products */,
+				A77F347B2F98F96F0051FBB2 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +111,14 @@
 				A731E6932F920E7B001FABE1 /* YettelHomeWorkUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A77F347B2F98F96F0051FBB2 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				B10000012F920E7B001FABE1 /* Config/Env.xcconfig */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +300,7 @@
 /* Begin XCBuildConfiguration section */
 		A731E69B2F920E7B001FABE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B10000012F920E7B001FABE1 /* Config/Env.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -348,6 +365,7 @@
 		};
 		A731E69C2F920E7B001FABE1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B10000012F920E7B001FABE1 /* Config/Env.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -405,12 +423,12 @@
 		};
 		A731E69E2F920E7B001FABE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B10000012F920E7B001FABE1 /* Config/Env.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = U79NK869DF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YettelHomeWork/Info.plist;
@@ -438,12 +456,12 @@
 		};
 		A731E69F2F920E7B001FABE1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B10000012F920E7B001FABE1 /* Config/Env.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = U79NK869DF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YettelHomeWork/Info.plist;
@@ -471,11 +489,11 @@
 		};
 		A731E6A12F920E7B001FABE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B10000012F920E7B001FABE1 /* Config/Env.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = U79NK869DF;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.narnium.test.document.foundationmodels.YettelHomeWorkTests;
@@ -492,11 +510,11 @@
 		};
 		A731E6A22F920E7B001FABE1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B10000012F920E7B001FABE1 /* Config/Env.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = U79NK869DF;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.narnium.test.document.foundationmodels.YettelHomeWorkTests;
@@ -513,10 +531,10 @@
 		};
 		A731E6A42F920E7B001FABE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B10000012F920E7B001FABE1 /* Config/Env.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = U79NK869DF;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.narnium.test.document.foundationmodels.YettelHomeWorkUITests;
@@ -533,10 +551,10 @@
 		};
 		A731E6A52F920E7B001FABE1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B10000012F920E7B001FABE1 /* Config/Env.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = U79NK869DF;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.narnium.test.document.foundationmodels.YettelHomeWorkUITests;
