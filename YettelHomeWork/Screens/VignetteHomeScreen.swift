@@ -13,7 +13,7 @@ struct VignetteHomeScreen: View {
     private enum HomeMetrics {
         static let pageContentSpacing: CGFloat = FigmaConstants.spacings.mediumLargePadding
         static let pageHorizontalPadding: CGFloat = FigmaConstants.spacings.mediumPadding
-        static let pageTopPadding: CGFloat = FigmaConstants.spacings.mediumPadding
+        static let pageTopPadding: CGFloat = FigmaConstants.spacings.xxLargePadding
         static let pageBottomPadding: CGFloat = FigmaConstants.spacings.xLargePadding
 
         static let cardGroupSpacing: CGFloat = FigmaConstants.spacings.mediumPadding
