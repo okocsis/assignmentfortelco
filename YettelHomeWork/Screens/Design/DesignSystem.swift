@@ -26,9 +26,9 @@ enum FigmaConstants {
     enum Typography {
         static let errorSize: CGFloat = 10
         static let labelSize: CGFloat = 14
-        static let bodySize: CGFloat = 18
-        static let headingSize: CGFloat = 22
-        static let buttonLabelSize: CGFloat = 16
+        static let bodySize: CGFloat = 16
+        static let headingSize: CGFloat = 20
+        static let buttonLabelSize: CGFloat = 20
         static let displaySize: CGFloat = 44
     }
 

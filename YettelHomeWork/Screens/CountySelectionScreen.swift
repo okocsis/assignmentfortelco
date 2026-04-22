@@ -9,7 +9,7 @@ struct CountySelectionScreen: View {
     private enum CountyMetrics {
         static let pageVerticalSpacing: CGFloat = FigmaConstants.spacings.mediumPadding
         static let pageHorizontalPadding: CGFloat = FigmaConstants.spacings.mediumPadding
-        static let pageTopPadding: CGFloat = FigmaConstants.spacings.mediumPadding
+        static let pageTopPadding: CGFloat = FigmaConstants.spacings.xxLargePadding
         static let pageBottomPadding: CGFloat = FigmaConstants.spacings.xLargePadding
 
         static let cardPadding: CGFloat = FigmaConstants.spacings.mediumPadding
@@ -39,7 +39,8 @@ struct CountySelectionScreen: View {
             horizontalPadding: CountyMetrics.pageHorizontalPadding,
             topPadding: CountyMetrics.pageTopPadding,
             bottomPadding: CountyMetrics.pageBottomPadding,
-            alignment: .leading
+            alignment: .leading,
+            backgroundColor: AppTheme.surface
         ) {
             countyCard
         }
@@ -51,7 +52,7 @@ struct CountySelectionScreen: View {
             alignment: .leading,
             spacing: 0,
             padding: CountyMetrics.cardPadding,
-            cornerRadius: AppTheme.cornerMedium
+            cornerRadius: 0
         ) {
             Text("county.section.title")
                 .font(AppTypography.bold(CountyMetrics.titleSize))

@@ -6,16 +6,34 @@ struct ScrollPageScaffold<Content: View>: View {
     let topPadding: CGFloat
     let bottomPadding: CGFloat
     let alignment: HorizontalAlignment
-    @ViewBuilder let content: Content
+    let backgroundColor: Color
+    @ViewBuilder let content: () -> Content
+    
+    init(
+        spacing: CGFloat,
+        horizontalPadding: CGFloat,
+        topPadding: CGFloat,
+        bottomPadding: CGFloat,
+        alignment: HorizontalAlignment,
+        backgroundColor: Color = AppTheme.pageBackground,
+        @ViewBuilder content: @escaping () -> Content
+    ) {
+        self.spacing = spacing
+        self.horizontalPadding = horizontalPadding
+        self.topPadding = topPadding
+        self.bottomPadding = bottomPadding
+        self.alignment = alignment
+        self.backgroundColor = backgroundColor
+        self.content = content
+    }
 
     var body: some View {
         ZStack {
-            AppTheme.pageBackground
-                .ignoresSafeArea()
+            backgroundColor.ignoresSafeArea()
 
             ScrollView {
                 VStack(alignment: alignment, spacing: spacing) {
-                    content
+                    content()
                 }
                 .padding(.horizontal, horizontalPadding)
                 .padding(.top, topPadding)

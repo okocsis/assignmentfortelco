@@ -18,7 +18,7 @@ enum PurchaseConfirmationScenario {
         case let .national(vignette, _, _):
             vignette.displayName
         case let .county(selectedCounties, _, _):
-            String(format: String(localized: "confirmation.county_count"), locale: .current, selectedCounties.count)
+            String(localized: "confirmation.county_count")
         }
     }
 

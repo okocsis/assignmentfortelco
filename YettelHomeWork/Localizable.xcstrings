@@ -102,13 +102,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%ld counties"
+            "value" : "Yearly county"
           }
         },
         "hu" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "%ld vármegye"
+            "state" : "needs_review",
+            "value" : "Éves vármegye"
           }
         }
       }
@@ -136,13 +136,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Product"
+            "value" : "Type of Vignette"
           }
         },
         "hu" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Termék"
+            "state" : "needs_review",
+            "value" : "Matrica típusa"
           }
         }
       }
@@ -159,7 +159,7 @@
         "hu" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rendelés ellenőrzése"
+            "value" : "Vásárlás megerősítése"
           }
         }
       }
@@ -187,13 +187,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vehicle"
+            "value" : "Licence plate"
           }
         },
         "hu" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jármű"
+            "state" : "needs_review",
+            "value" : "Rendszám"
           }
         }
       }
@@ -387,7 +387,20 @@
       }
     },
     "not_selected" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "not selected"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "ki nem választott"
+          }
+        }
+      }
     },
     "result.button.done" : {
       "extractionState" : "manual",
@@ -509,7 +522,14 @@
       }
     },
     "selected" : {
-
+      "localizations" : {
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kiválasztott"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

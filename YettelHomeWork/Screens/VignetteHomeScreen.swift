@@ -35,7 +35,7 @@ struct VignetteHomeScreen: View {
 
         static let sectionTitleSize: CGFloat = FigmaConstants.typography.headingSize
         static let errorTextSize: CGFloat = FigmaConstants.typography.errorSize
-        static let vehiclePlateSize: CGFloat = FigmaConstants.typography.headingSize
+        static let vehiclePlateSize: CGFloat = FigmaConstants.typography.bodySize
         static let vehicleNameSize: CGFloat = FigmaConstants.typography.bodySize
         static let optionTitleSize: CGFloat = FigmaConstants.typography.bodySize
         static let optionPriceSize: CGFloat = FigmaConstants.typography.bodySize
@@ -53,7 +53,7 @@ struct VignetteHomeScreen: View {
             horizontalPadding: HomeMetrics.pageHorizontalPadding,
             topPadding: HomeMetrics.pageTopPadding,
             bottomPadding: HomeMetrics.pageBottomPadding,
-            alignment: .leading
+            alignment: .leading,
         ) {
             homeCard
             countyRow
