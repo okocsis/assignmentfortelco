@@ -6,6 +6,13 @@ struct CountyMapView: View {
     let selectedCountyIDs: Set<String>
     let onToggle: (String) -> Void
 
+    private enum MapMetrics {
+        static let aspectRatio: CGFloat = 1.55
+        static let borderWidth: CGFloat = 1.8
+        static let selectedFill = Color(red: 0.73, green: 1.00, blue: 0.00)
+        static let unselectedFill = Color(red: 0.77, green: 0.87, blue: 0.93)
+    }
+
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -14,7 +21,7 @@ struct CountyMapView: View {
                 }
             }
         }
-        .aspectRatio(1.55, contentMode: .fit)
+        .aspectRatio(MapMetrics.aspectRatio, contentMode: .fit)
     }
 
     @ViewBuilder
@@ -25,9 +32,9 @@ struct CountyMapView: View {
             let path = makePath(for: shape, in: size)
 
             path
-                .fill(isSelected ? Color(red: 0.73, green: 1.00, blue: 0.00) : Color(red: 0.77, green: 0.87, blue: 0.93))
+                .fill(isSelected ? MapMetrics.selectedFill : MapMetrics.unselectedFill)
                 .overlay(
-                    path.stroke(.white, lineWidth: 1.8)
+                    path.stroke(.white, lineWidth: MapMetrics.borderWidth)
                 )
                 .contentShape(path)
                 .onTapGesture {

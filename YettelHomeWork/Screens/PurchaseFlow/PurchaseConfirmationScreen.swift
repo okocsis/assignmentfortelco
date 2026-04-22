@@ -68,10 +68,14 @@ enum PurchaseConfirmationScenario {
     }
 }
 
-struct PurchaseConfirmationView: View {
+struct PurchaseConfirmationScreen: View {
     let scenario: PurchaseConfirmationScenario
     @Environment(\.dismiss) private var dismiss
     @State private var submissionViewModel: PurchaseSubmissionViewModel
+
+    private enum Metrics {
+        static let totalSectionSpacing: CGFloat = 6
+    }
 
     init(
         scenario: PurchaseConfirmationScenario,
@@ -83,54 +87,73 @@ struct PurchaseConfirmationView: View {
 
     var body: some View {
         PurchaseConfirmationScreenContainer {
-            VStack(alignment: .leading, spacing: ConfirmationScreenMetrics.verticalSectionSpacing) {
+            VStack(alignment: .leading, spacing: PurchaseConfirmationMetrics.verticalSectionSpacing) {
                 Text("confirmation.title")
-                    .font(.system(size: ConfirmationScreenMetrics.cardTitleSize, weight: .bold, design: .rounded))
+                    .font(AppTypography.bold(PurchaseConfirmationMetrics.cardTitleSize))
                     .foregroundStyle(AppTheme.primaryText)
 
                 Divider()
 
-                purchaseConfirmationLine(title: String(localized: "confirmation.vehicle"), value: scenario.vehiclePlate.uppercased())
-                purchaseConfirmationLine(title: String(localized: "confirmation.product"), value: scenario.productSummary)
+                DetailLineRow(
+                    title: String(localized: "confirmation.vehicle"),
+                    value: scenario.vehiclePlate.uppercased(),
+                    emphasizedTitle: false,
+                    size: PurchaseConfirmationMetrics.rowTextSize
+                )
+                DetailLineRow(
+                    title: String(localized: "confirmation.product"),
+                    value: scenario.productSummary,
+                    emphasizedTitle: false,
+                    size: PurchaseConfirmationMetrics.rowTextSize
+                )
 
                 if !scenario.detailRows.isEmpty {
                     Divider()
 
                     ForEach(scenario.detailRows) { row in
-                        purchaseConfirmationLine(title: row.title, value: row.value, emphasizedTitle: row.emphasizedTitle)
+                        DetailLineRow(
+                            title: row.title,
+                            value: row.value,
+                            emphasizedTitle: row.emphasizedTitle,
+                            size: PurchaseConfirmationMetrics.rowTextSize
+                        )
                     }
                 }
 
                 Divider()
 
-                VStack(alignment: .leading, spacing: 6) {
+                VStack(alignment: .leading, spacing: Metrics.totalSectionSpacing) {
                     Text(scenario.totalLabel)
-                        .font(.system(size: ConfirmationScreenMetrics.totalLabelSize, weight: .bold, design: .rounded))
+                        .font(AppTypography.bold(PurchaseConfirmationMetrics.totalLabelSize))
                         .foregroundStyle(AppTheme.primaryText)
                     Text(scenario.totalPriceText)
-                        .font(.system(size: ConfirmationScreenMetrics.totalValueSize, weight: .bold, design: .rounded))
+                        .font(AppTypography.bold(PurchaseConfirmationMetrics.totalValueSize))
                         .foregroundStyle(AppTheme.primaryText)
                 }
 
                 Spacer(minLength: 0)
 
-                PurchaseConfirmationPrimaryButton(isSubmitting: submissionViewModel.isSubmitting) {
+                PrimaryActionButton(
+                    title: "county.button.next",
+                    isEnabled: scenario.isSubmittable,
+                    isLoading: submissionViewModel.isSubmitting
+                ) {
                     submissionViewModel.submit(items: scenario.orderItems)
                 }
+                .padding(.top, PurchaseConfirmationMetrics.buttonTopPadding)
                 .disabled(!scenario.isSubmittable)
+                .accessibilityIdentifier("confirmation.primaryButton")
 
-                PurchaseConfirmationSecondaryButton {
+                SecondaryActionButton(title: "common.button.cancel") {
                     dismiss()
                 }
+                .padding(.top, PurchaseConfirmationMetrics.buttonSpacing)
             }
         }
-        .navigationTitle(String(localized: "common.title.e_vignette"))
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbarBackground(AppTheme.accentLime, for: .navigationBar)
-        .toolbarBackground(.visible, for: .navigationBar)
+        .eVignetteNavigationBar()
         .navigationDestination(isPresented: $submissionViewModel.showResult) {
             if let orderResult = submissionViewModel.orderResult {
-                OrderResultView(payload: orderResult)
+                OrderResultScreen(payload: orderResult)
             }
         }
     }
@@ -138,7 +161,7 @@ struct PurchaseConfirmationView: View {
 
 #Preview("National Purchase Confirmation") {
     NavigationStack {
-        PurchaseConfirmationView(
+        PurchaseConfirmationScreen(
             scenario: .national(
                 vignette: NationalVignetteOption(from: HighwayVignette(vignetteType: ["WEEK"], vehicleCategory: "CAR", cost: 6400, trxFee: 200, sum: 6600))!,
                 vehiclePlate: "abc-123",
@@ -151,7 +174,7 @@ struct PurchaseConfirmationView: View {
 
 #Preview("County Purchase Confirmation") {
     NavigationStack {
-        PurchaseConfirmationView(
+        PurchaseConfirmationScreen(
             scenario: .county(
                 selectedCounties: [
                     CountyVignetteOption(id: "YEAR_12", name: "Baranya", price: 6860),

@@ -13,7 +13,7 @@ struct YettelHomeWorkApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView(dependencies: dependencies)
+            NavigationRoot(dependencies: dependencies)
                 .environment(\.appDependencies, dependencies)
         }
     }
