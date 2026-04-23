@@ -133,9 +133,10 @@ struct VignetteHomeScreen: View {
             cornerRadius: AppTheme.cornerSmall
         ) {
             HStack(spacing: HomeMetrics.vehicleRowSpacing) {
-                Image(systemName: "car.fill")
-                    .font(AppTypography.semibold(HomeMetrics.vehicleIconSize))
-                    .foregroundStyle(AppTheme.primaryText)
+                Image("CustomCarIcon")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: HomeMetrics.vehicleIconSize, height: HomeMetrics.vehicleIconSize)
                     .frame(width: HomeMetrics.vehicleIconFrameSize, height: HomeMetrics.vehicleIconFrameSize)
 
                 VStack(alignment: .leading, spacing: HomeMetrics.vehicleTextSpacing) {
