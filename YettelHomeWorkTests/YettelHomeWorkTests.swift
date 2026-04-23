@@ -158,19 +158,19 @@ struct YettelHomeWorkTests {
         ))
 
         viewModel.toggleCountySelection("A")
-        #expect(viewModel.connectivityWarning == nil)
+        #expect(viewModel.isWarningHidden)
         #expect(viewModel.totalPriceText == PurchaseConfirmationScenario.localizedPriceText(for: 6860))
 
         viewModel.toggleCountySelection("C")
-        #expect(viewModel.connectivityWarning != nil)
+        #expect(viewModel.isWarningHidden == false)
         #expect(viewModel.totalPriceText == PurchaseConfirmationScenario.localizedPriceText(for: 13720))
 
         viewModel.toggleCountySelection("C")
-        #expect(viewModel.connectivityWarning == nil)
+        #expect(viewModel.isWarningHidden)
         #expect(viewModel.totalPriceText == PurchaseConfirmationScenario.localizedPriceText(for: 6860))
 
         viewModel.toggleCountySelection("B")
-        #expect(viewModel.connectivityWarning == nil)
+        #expect(viewModel.isWarningHidden)
         #expect(viewModel.totalPriceText == PurchaseConfirmationScenario.localizedPriceText(for: 13720))
     }
 
