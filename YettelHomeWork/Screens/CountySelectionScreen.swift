@@ -46,6 +46,14 @@ struct CountySelectionScreen: View {
         }
         .eVignetteNavigationBar()
     }
+    
+    private func connectivityWarningText(_ warning: String) -> some View {
+        Text(warning)
+            .font(AppTypography.medium(CountyMetrics.warningSize))
+            .foregroundStyle(.red)
+            .accessibilityIdentifier("county.warning.disconnected")
+            .padding(.top, CountyMetrics.mapToWarningSpacing)
+    }
 
     private var countyCard: some View {
         SectionCard(
@@ -66,12 +74,11 @@ struct CountySelectionScreen: View {
             )
             .padding(.top, CountyMetrics.titleToMapSpacing)
 
-            if let connectivityWarning = viewModel.connectivityWarning {
-                Text(connectivityWarning)
-                    .font(AppTypography.medium(CountyMetrics.warningSize))
-                    .foregroundStyle(.red)
-                    .accessibilityIdentifier("county.warning.disconnected")
-                    .padding(.top, CountyMetrics.mapToWarningSpacing)
+            if viewModel.isWarningHidden {
+                connectivityWarningText(viewModel.connectivityWarning).hidden()
+            } else {
+                connectivityWarningText(viewModel.connectivityWarning)
+
             }
 
             VStack(spacing: 0) {
@@ -79,7 +86,7 @@ struct CountySelectionScreen: View {
                     countyRow(county)
                 }
             }
-            .padding(.top, viewModel.connectivityWarning == nil ? CountyMetrics.mapToListSpacing : CountyMetrics.warningToListSpacing)
+            .padding(.top, CountyMetrics.warningToListSpacing)
 
             VStack(alignment: .leading, spacing: CountyMetrics.totalLabelToValueSpacing) {
                 Divider()

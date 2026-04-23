@@ -16,10 +16,14 @@ final class CountySelectionViewModel {
     let input: CountySelectionInput
 
     private(set) var selectedCountyIDs: Set<String> = []
-    private(set) var connectivityWarning: String?
+    private(set) var isWarningHidden = true
+    private(set) var connectivityWarning: String
+
 
     init(input: CountySelectionInput) {
         self.input = input
+        let warningFormat = String(localized: "county.warning.disconnected_selection")
+        self.connectivityWarning = String(format: warningFormat, locale: .current, "placeholder")
     }
 
     var canProceed: Bool {
@@ -43,7 +47,7 @@ final class CountySelectionViewModel {
     func toggleCountySelection(_ countyID: String) {
         if selectedCountyIDs.contains(countyID) {
             selectedCountyIDs.remove(countyID)
-            connectivityWarning = nil
+            isWarningHidden = true
             return
         }
 
@@ -52,14 +56,16 @@ final class CountySelectionViewModel {
 
         let directlyConnected = selectedBeforeInsert.isEmpty
             || selectedBeforeInsert.contains(where: { isDirectCountyNeighbor(countyID, $0) })
+        
 
         if directlyConnected == false {
             let countyName = input.countyVignettes.first(where: { $0.id == countyID })?.name ?? countyID
             let warningFormat = String(localized: "county.warning.disconnected_selection")
             connectivityWarning = String(format: warningFormat, locale: .current, countyName)
-        } else {
-            connectivityWarning = nil
         }
+        
+        isWarningHidden = directlyConnected
+
     }
 
     private func isDirectCountyNeighbor(_ lhs: String, _ rhs: String) -> Bool {
