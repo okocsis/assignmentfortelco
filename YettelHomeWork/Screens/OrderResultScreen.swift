@@ -124,10 +124,12 @@ struct OrderResultScreen: View {
                 Text(payload.message.isEmpty ? String(localized: "result.failure.message") : payload.message)
                     .font(AppTypography.regular(ResultMetrics.failureMessageSize))
                     .foregroundStyle(AppTheme.primaryText.opacity(ResultMetrics.failureMessageOpacity))
+                    .accessibilityIdentifier("result.failureMessage")
 
                 PrimaryActionButton(title: "result.button.retry") {
                     dismiss()
                 }
+                .accessibilityIdentifier("result.retryButton")
             }
         }
     }

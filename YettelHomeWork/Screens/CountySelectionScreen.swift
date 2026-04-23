@@ -91,6 +91,7 @@ struct CountySelectionScreen: View {
                 Text(viewModel.totalPriceText)
                     .font(AppTypography.bold(CountyMetrics.totalValueSize))
                     .foregroundStyle(Color(red: 0.02, green: 0.15, blue: 0.28))
+                    .accessibilityIdentifier("county.totalValue")
             }
             .padding(.top, CountyMetrics.listToTotalSpacing)
 

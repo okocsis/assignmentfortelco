@@ -140,6 +140,7 @@ struct PurchaseConfirmationScreen: View {
                             size: PurchaseConfirmationMetrics.rowTextSize
                         )
                         .accessibilityIdentifier("confirmation.row.\(row.id)")
+                        .accessibilityValue(row.value)
                     }
                 }
 
@@ -149,9 +150,11 @@ struct PurchaseConfirmationScreen: View {
                     Text(scenario.totalLabel)
                         .font(AppTypography.bold(PurchaseConfirmationMetrics.totalLabelSize))
                         .foregroundStyle(AppTheme.primaryText)
+                        .accessibilityIdentifier("confirmation.totalLabel")
                     Text(scenario.totalPriceText)
                         .font(AppTypography.bold(PurchaseConfirmationMetrics.totalValueSize))
                         .foregroundStyle(AppTheme.primaryText)
+                        .accessibilityIdentifier("confirmation.totalValue")
                 }
 
                 Spacer(minLength: 0)
@@ -170,6 +173,7 @@ struct PurchaseConfirmationScreen: View {
                 SecondaryActionButton(title: "common.button.cancel") {
                     dismiss()
                 }
+                .accessibilityIdentifier("confirmation.cancelButton")
                 .padding(.top, PurchaseConfirmationMetrics.buttonSpacing)
             }
         }

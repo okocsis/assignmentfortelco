@@ -12,7 +12,10 @@ struct AppDependencies {
 
         let apiClient: any HighwayAPIClientProtocol
         if config.useMockAPI {
-            apiClient = UITestPHPMockHighwayAPIClient(orderResultOverride: config.mockOrderResultOverride)
+            apiClient = UITestPHPMockHighwayAPIClient(
+                orderResultOverride: config.mockOrderResultOverride,
+                responseDelayNanoseconds: config.mockResponseDelayNanoseconds
+            )
         } else {
             apiClient = HighwayAPIClient(baseURL: config.baseURL)
         }
@@ -50,6 +53,7 @@ private struct AppRuntimeConfig {
     let useMockAPI: Bool
     let baseURL: URL
     let mockOrderResultOverride: UITestOrderResultOverride?
+    let mockResponseDelayNanoseconds: UInt64?
 
     init(processInfo: ProcessInfo) {
         let launchArguments = processInfo.arguments
@@ -83,6 +87,16 @@ private struct AppRuntimeConfig {
             }
         } else {
             mockOrderResultOverride = nil
+        }
+
+        if let delayValue = Self.readValue(
+            from: launchArguments,
+            key: "-mock-delay-ms",
+            fallback: environment["UITEST_MOCK_DELAY_MS"]
+        ), let delayMS = UInt64(delayValue), delayMS > 0 {
+            mockResponseDelayNanoseconds = delayMS * 1_000_000
+        } else {
+            mockResponseDelayNanoseconds = nil
         }
     }
 

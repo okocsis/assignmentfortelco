@@ -114,11 +114,13 @@ struct VignetteHomeScreen: View {
                     PrimaryActionButtonLabel(title: "common.button.purchase")
                 }
                 .buttonStyle(.plain)
+                .accessibilityIdentifier("home.nationalPurchaseButton")
             } else {
                 Button {} label: {
                     PrimaryActionButtonLabel(title: "common.button.purchase", isEnabled: false)
                 }
                 .disabled(true)
+                .accessibilityIdentifier("home.nationalPurchaseButton")
             }
         }
     }
@@ -183,6 +185,8 @@ struct VignetteHomeScreen: View {
                 .stroke(isSelected ? AppTheme.primaryText : Color.figmaFillUV5OR5, lineWidth: HomeMetrics.nationalOptionStrokeWidth)
         )
         .clipShape(.rect(cornerRadius: HomeMetrics.nationalOptionCornerRadius))
+        .accessibilityIdentifier("home.nationalOption.\(vignette.type)")
+        .accessibilityValue(vignette.priceText)
     }
 
     private var countyRow: some View {

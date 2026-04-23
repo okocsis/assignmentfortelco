@@ -90,20 +90,32 @@ enum UITestPHPMockDataSource {
 
 struct UITestPHPMockHighwayAPIClient: HighwayAPIClientProtocol {
     let orderResultOverride: UITestOrderResultOverride?
+    let responseDelayNanoseconds: UInt64?
 
-    init(orderResultOverride: UITestOrderResultOverride? = nil) {
+    init(orderResultOverride: UITestOrderResultOverride? = nil, responseDelayNanoseconds: UInt64? = nil) {
         self.orderResultOverride = orderResultOverride
+        self.responseDelayNanoseconds = responseDelayNanoseconds
     }
 
     func fetchVehicle() async throws(HighwayAPIError) -> VehicleResponse {
-        UITestPHPMockDataSource.vehicleResponse
+        if let responseDelayNanoseconds {
+            try? await Task.sleep(nanoseconds: responseDelayNanoseconds)
+        }
+        return UITestPHPMockDataSource.vehicleResponse
     }
 
     func fetchHighwayInfo() async throws(HighwayAPIError) -> HighwayInfoResponse {
-        UITestPHPMockDataSource.highwayInfoResponse
+        if let responseDelayNanoseconds {
+            try? await Task.sleep(nanoseconds: responseDelayNanoseconds)
+        }
+        return UITestPHPMockDataSource.highwayInfoResponse
     }
 
     func placeOrder(_ orders: [OrderItem]) async throws(HighwayAPIError) -> OrderResponse {
+        if let responseDelayNanoseconds {
+            try? await Task.sleep(nanoseconds: responseDelayNanoseconds)
+        }
+
         guard let orderResultOverride else {
             return UITestPHPMockDataSource.orderResponse(for: orders)
         }
