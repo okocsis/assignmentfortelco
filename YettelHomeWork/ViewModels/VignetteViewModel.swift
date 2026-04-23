@@ -51,7 +51,6 @@ final class VignetteViewModel {
                     trxFee: countyTemplate.trxFee
                 )
             }
-            .sorted { $0.name < $1.name }
     }
 
     private var countyVignetteTemplate: HighwayVignette? {
