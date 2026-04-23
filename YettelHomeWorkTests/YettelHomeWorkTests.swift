@@ -82,7 +82,7 @@ struct YettelHomeWorkTests {
 
         #expect(detailRows.count == 3)
         #expect(detailRows.last?.id == "transaction_fee_total")
-        #expect(detailRows.last?.value == purchaseConfirmationPriceText(350))
+        #expect(detailRows.last?.value == PurchaseConfirmationScenario.localizedPriceText(for: 350))
         #expect(detailRows.last?.emphasizedTitle == false)
     }
 
@@ -95,7 +95,7 @@ struct YettelHomeWorkTests {
 
         #expect(scenario.detailRows.count == 1)
         #expect(scenario.detailRows.first?.id == "transaction_fee_total")
-        #expect(scenario.detailRows.first?.value == purchaseConfirmationPriceText(200))
+        #expect(scenario.detailRows.first?.value == PurchaseConfirmationScenario.localizedPriceText(for:200))
     }
 
     @Test func countyScenarioOmitsTransactionFeeSummaryWhenFeeIsZero() {
@@ -118,7 +118,7 @@ struct YettelHomeWorkTests {
             vehiclePlate: "abc-123",
             orderCategory: "CAR"
         )
-        #expect(national.totalPriceText == purchaseConfirmationPriceText(10560))
+        #expect(national.totalPriceText == PurchaseConfirmationScenario.localizedPriceText(for: 10560))
         #expect(national.orderItems.count == 1)
         #expect(national.orderItems.first?.type == "MONTH")
         #expect(national.orderItems.first?.cost == 10560)
@@ -131,7 +131,7 @@ struct YettelHomeWorkTests {
             vehiclePlate: "abc-123",
             orderCategory: "CAR"
         )
-        #expect(county.totalPriceText == purchaseConfirmationPriceText(14260))
+        #expect(county.totalPriceText == PurchaseConfirmationScenario.localizedPriceText(for: 14260))
         #expect(county.orderItems.map(\.type) == ["YEAR_12", "YEAR_25"])
         #expect(county.orderItems.map(\.cost) == [7060, 7200])
     }
@@ -152,19 +152,19 @@ struct YettelHomeWorkTests {
 
         viewModel.toggleCountySelection("A")
         #expect(viewModel.connectivityWarning == nil)
-        #expect(viewModel.totalPriceText == purchaseConfirmationPriceText(6860))
+        #expect(viewModel.totalPriceText == PurchaseConfirmationScenario.localizedPriceText(for: 6860))
 
         viewModel.toggleCountySelection("C")
         #expect(viewModel.connectivityWarning != nil)
-        #expect(viewModel.totalPriceText == purchaseConfirmationPriceText(13720))
+        #expect(viewModel.totalPriceText == PurchaseConfirmationScenario.localizedPriceText(for: 13720))
 
         viewModel.toggleCountySelection("C")
         #expect(viewModel.connectivityWarning == nil)
-        #expect(viewModel.totalPriceText == purchaseConfirmationPriceText(6860))
+        #expect(viewModel.totalPriceText == PurchaseConfirmationScenario.localizedPriceText(for: 6860))
 
         viewModel.toggleCountySelection("B")
         #expect(viewModel.connectivityWarning == nil)
-        #expect(viewModel.totalPriceText == purchaseConfirmationPriceText(13720))
+        #expect(viewModel.totalPriceText == PurchaseConfirmationScenario.localizedPriceText(for: 13720))
     }
 
     @MainActor
