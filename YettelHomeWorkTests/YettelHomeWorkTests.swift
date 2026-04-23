@@ -86,6 +86,18 @@ struct YettelHomeWorkTests {
         #expect(detailRows.last?.emphasizedTitle == false)
     }
 
+    @Test func nationalScenarioIncludesTransactionFeeSummaryWhenFeeIsPositive() {
+        let scenario = PurchaseConfirmationScenario.national(
+            vignette: NationalVignetteOption(from: HighwayVignette(vignetteType: ["MONTH"], vehicleCategory: "CAR", cost: 10360, trxFee: 200, sum: 10560))!,
+            vehiclePlate: "abc-123",
+            orderCategory: "CAR"
+        )
+
+        #expect(scenario.detailRows.count == 1)
+        #expect(scenario.detailRows.first?.id == "transaction_fee_total")
+        #expect(scenario.detailRows.first?.value == purchaseConfirmationPriceText(200))
+    }
+
     @Test func countyScenarioOmitsTransactionFeeSummaryWhenFeeIsZero() {
         let scenario = PurchaseConfirmationScenario.county(
             selectedCounties: [
@@ -119,9 +131,9 @@ struct YettelHomeWorkTests {
             vehiclePlate: "abc-123",
             orderCategory: "CAR"
         )
-        #expect(county.totalPriceText == purchaseConfirmationPriceText(13860))
+        #expect(county.totalPriceText == purchaseConfirmationPriceText(14260))
         #expect(county.orderItems.map(\.type) == ["YEAR_12", "YEAR_25"])
-        #expect(county.orderItems.map(\.cost) == [6860, 7000])
+        #expect(county.orderItems.map(\.cost) == [7060, 7200])
     }
 
     @MainActor
@@ -201,9 +213,26 @@ struct YettelHomeWorkTests {
         await viewModel.load()
 
         #expect(viewModel.nationalVignettes.map(\.type) == ["WEEK", "MONTH", "DAY", "YEAR"])
-        #expect(viewModel.countyVignettePrice == 6900)
-        #expect(viewModel.countyVignettes.map(\.price) == [6900, 6900])
+        #expect(viewModel.countyVignettePrice == 6660)
+        #expect(viewModel.countyVignettes.map(\.price) == [6660, 6660])
         #expect(viewModel.countyVignettes.map(\.trxFee) == [240, 240])
+    }
+
+    @MainActor
+    @Test func vignetteViewModelLoadSetsErrorStateWhenAPIFails() async {
+        let viewModel = VignetteViewModel(
+            apiClient: MockFailingHighwayAPIClient(),
+            mapRepository: MockFailingMapRepository()
+        )
+
+        await viewModel.load()
+
+        #expect(viewModel.errorMessage?.contains("HTTP 500") == true)
+        #expect(viewModel.isLoading == false)
+        #expect(viewModel.vehicle == nil)
+        #expect(viewModel.highwayInfo == nil)
+        #expect(viewModel.nationalVignettes.isEmpty)
+        #expect(viewModel.countyVignettes.isEmpty)
     }
 
 }
@@ -236,5 +265,23 @@ private struct MockFailingMapRepository: MapRepository {
 
     func mapSVGText(mapID _: String) throws(MapRepositoryError) -> String {
         throw MapRepositoryError.assetNotFound("CountyMapSVG")
+    }
+}
+
+private struct MockFailingHighwayAPIClient: HighwayAPIClientProtocol {
+    func fetchVehicle() async throws(HighwayAPIError) -> VehicleResponse {
+        throw .httpError(code: 500, message: "forced test error")
+    }
+
+    func fetchHighwayInfo() async throws(HighwayAPIError) -> HighwayInfoResponse {
+        throw .httpError(code: 500, message: "forced test error")
+    }
+
+    func placeOrder(_: [OrderItem]) async throws(HighwayAPIError) -> OrderResponse {
+        throw .httpError(code: 500, message: "forced test error")
+    }
+
+    func send<Request: HighwayAPIRequest>(_: Request) async throws(HighwayAPIError) -> Request.Response {
+        throw .httpError(code: 500, message: "forced test error")
     }
 }

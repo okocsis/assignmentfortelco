@@ -36,7 +36,7 @@ final class VignetteViewModel {
     }
 
     var countyVignettePrice: Double {
-        countyVignetteTemplate?.sum ?? 0
+        countyVignetteTemplate?.cost ?? 0
     }
 
     var countyVignettes: [CountyVignetteOption] {
@@ -47,7 +47,7 @@ final class VignetteViewModel {
                 CountyVignetteOption(
                     id: $0.id,
                     name: $0.name,
-                    price: countyTemplate.sum,
+                    price: countyTemplate.cost,
                     trxFee: countyTemplate.trxFee
                 )
             }
@@ -115,6 +115,10 @@ struct CountyVignetteOption: Identifiable {
     let price: Double
     let trxFee: Double
 
+    var totalPrice: Double {
+        price + trxFee
+    }
+
     var priceText: String {
         let formatted = Int(price)
             .formatted(.number.grouping(.automatic).locale(.current))
@@ -127,6 +131,8 @@ struct NationalVignetteOption: Identifiable {
     let id: String
     let type: String
     let displayName: String
+    let cost: Double
+    let trxFee: Double
     let sum: Double
     let sortOrder: Int
 
@@ -135,6 +141,10 @@ struct NationalVignetteOption: Identifiable {
             .formatted(.number.grouping(.automatic).locale(.current))
         let template = String(localized: "common.price_huf_format")
         return String(format: template, locale: .current, formatted)
+    }
+
+    var totalPrice: Double {
+        cost + trxFee
     }
 
     init?(from vignette: HighwayVignette) {
@@ -165,6 +175,8 @@ struct NationalVignetteOption: Identifiable {
         self.id = type
         self.type = type
         self.displayName = label
+        self.cost = vignette.cost
+        self.trxFee = vignette.trxFee
         self.sum = vignette.sum
         self.sortOrder = sortOrder
     }

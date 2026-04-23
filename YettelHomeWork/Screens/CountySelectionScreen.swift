@@ -99,6 +99,7 @@ struct CountySelectionScreen: View {
                     PrimaryActionButtonLabel(title: "county.button.next", isEnabled: false)
                 }
                 .disabled(true)
+                .accessibilityIdentifier("county.nextButton")
                 .padding(.top, CountyMetrics.totalToButtonSpacing)
             } else {
                 NavigationLink {
@@ -114,6 +115,7 @@ struct CountySelectionScreen: View {
                     PrimaryActionButtonLabel(title: "county.button.next")
                 }
                 .buttonStyle(.plain)
+                .accessibilityIdentifier("county.nextButton")
                 .padding(.top, CountyMetrics.totalToButtonSpacing)
             }
         }

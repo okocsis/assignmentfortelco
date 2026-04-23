@@ -2,7 +2,11 @@ import XCTest
 
 enum UITestIDs {
     static let homeCountyFlowButton = "home.countyFlowButton"
+    static let countyNextButton = "county.nextButton"
     static let disconnectedWarning = "county.warning.disconnected"
+    static let confirmationPrimaryButton = "confirmation.primaryButton"
+    static let confirmationTransactionFeeRow = "confirmation.row.transaction_fee_total"
+    static let resultDoneButton = "result.doneButton"
 
     static func countyRow(_ countyID: String) -> String {
         "county.row.\(countyID)"

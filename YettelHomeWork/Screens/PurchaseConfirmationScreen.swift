@@ -24,8 +24,16 @@ enum PurchaseConfirmationScenario {
 
     var detailRows: [PurchaseConfirmationDetailRow] {
         switch self {
-        case .national:
-            return []
+        case let .national(vignette, _, _):
+            guard vignette.trxFee > 0 else { return [] }
+            return [
+                PurchaseConfirmationDetailRow(
+                    id: "transaction_fee_total",
+                    title: String(localized: "confirmation.transaction_fee"),
+                    value: purchaseConfirmationPriceText(vignette.trxFee),
+                    emphasizedTitle: false
+                ),
+            ]
         case let .county(selectedCounties, _, _):
             var rows = selectedCounties.map {
                 PurchaseConfirmationDetailRow(id: $0.id, title: $0.name, value: $0.priceText, emphasizedTitle: true)
@@ -59,9 +67,9 @@ enum PurchaseConfirmationScenario {
     var totalPriceText: String {
         switch self {
         case let .national(vignette, _, _):
-            return vignette.priceText
+            return purchaseConfirmationPriceText(vignette.totalPrice)
         case let .county(selectedCounties, _, _):
-            let total = selectedCounties.reduce(0) { $0 + $1.price }
+            let total = selectedCounties.reduce(0) { $0 + $1.totalPrice }
             return purchaseConfirmationPriceText(total)
         }
     }
@@ -69,10 +77,10 @@ enum PurchaseConfirmationScenario {
     var orderItems: [OrderItem] {
         switch self {
         case let .national(vignette, _, orderCategory):
-            [OrderItem(type: vignette.type, category: orderCategory, cost: vignette.sum)]
+            [OrderItem(type: vignette.type, category: orderCategory, cost: vignette.totalPrice)]
         case let .county(selectedCounties, _, orderCategory):
             selectedCounties.map {
-                OrderItem(type: $0.id, category: orderCategory, cost: $0.price)
+                OrderItem(type: $0.id, category: orderCategory, cost: $0.totalPrice)
             }
         }
     }
