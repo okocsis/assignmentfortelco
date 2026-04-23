@@ -181,6 +181,23 @@
         }
       }
     },
+    "confirmation.transaction_fee" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transaction fee"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rendszerhasználati díj"
+          }
+        }
+      }
+    },
     "confirmation.vehicle" : {
       "extractionState" : "manual",
       "localizations" : {

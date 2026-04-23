@@ -17,7 +17,7 @@ enum PurchaseConfirmationScenario {
         switch self {
         case let .national(vignette, _, _):
             vignette.displayName
-        case let .county(selectedCounties, _, _):
+        case .county:
             String(localized: "confirmation.county_count")
         }
     }
@@ -25,11 +25,25 @@ enum PurchaseConfirmationScenario {
     var detailRows: [PurchaseConfirmationDetailRow] {
         switch self {
         case .national:
-            []
+            return []
         case let .county(selectedCounties, _, _):
-            selectedCounties.map {
+            var rows = selectedCounties.map {
                 PurchaseConfirmationDetailRow(id: $0.id, title: $0.name, value: $0.priceText, emphasizedTitle: true)
             }
+
+            let transactionFee = selectedCounties.reduce(0) { $0 + $1.trxFee }
+            if transactionFee > 0 {
+                rows.append(
+                    PurchaseConfirmationDetailRow(
+                        id: "transaction_fee_total",
+                        title: String(localized: "confirmation.transaction_fee"),
+                        value: purchaseConfirmationPriceText(transactionFee),
+                        emphasizedTitle: false
+                    )
+                )
+            }
+
+            return rows
         }
     }
 
@@ -117,6 +131,7 @@ struct PurchaseConfirmationScreen: View {
                             emphasizedTitle: row.emphasizedTitle,
                             size: PurchaseConfirmationMetrics.rowTextSize
                         )
+                        .accessibilityIdentifier("confirmation.row.\(row.id)")
                     }
                 }
 
@@ -177,8 +192,8 @@ struct PurchaseConfirmationScreen: View {
         PurchaseConfirmationScreen(
             scenario: .county(
                 selectedCounties: [
-                    CountyVignetteOption(id: "YEAR_12", name: "Baranya", price: 6860),
-                    CountyVignetteOption(id: "YEAR_25", name: "Szabolcs-Szatmar-Bereg", price: 6860),
+                    CountyVignetteOption(id: "YEAR_12", name: "Baranya", price: 6860, trxFee: 200),
+                    CountyVignetteOption(id: "YEAR_25", name: "Szabolcs-Szatmar-Bereg", price: 6860, trxFee: 200),
                 ],
                 vehiclePlate: "abc-123",
                 orderCategory: "CAR"

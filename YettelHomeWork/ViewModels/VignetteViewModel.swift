@@ -36,19 +36,29 @@ final class VignetteViewModel {
     }
 
     var countyVignettePrice: Double {
-        guard let info = highwayInfo else { return 0 }
-
-        return info.payload.highwayVignettes
-            .first(where: { $0.vignetteType.contains(where: { $0.hasPrefix("YEAR_") }) })?
-            .sum ?? 0
+        countyVignetteTemplate?.sum ?? 0
     }
 
     var countyVignettes: [CountyVignetteOption] {
-        guard let info = highwayInfo else { return [] }
+        guard let info = highwayInfo, let countyTemplate = countyVignetteTemplate else { return [] }
 
         return info.payload.counties
-            .map { CountyVignetteOption(id: $0.id, name: $0.name, price: countyVignettePrice) }
+            .map {
+                CountyVignetteOption(
+                    id: $0.id,
+                    name: $0.name,
+                    price: countyTemplate.sum,
+                    trxFee: countyTemplate.trxFee
+                )
+            }
             .sorted { $0.name < $1.name }
+    }
+
+    private var countyVignetteTemplate: HighwayVignette? {
+        guard let info = highwayInfo else { return nil }
+
+        return info.payload.highwayVignettes
+            .first(where: { $0.vignetteType.contains(where: { $0.hasPrefix("YEAR_") }) })
     }
 
     var orderCategory: String {
@@ -103,6 +113,7 @@ struct CountyVignetteOption: Identifiable {
     let id: String
     let name: String
     let price: Double
+    let trxFee: Double
 
     var priceText: String {
         let formatted = Int(price)
