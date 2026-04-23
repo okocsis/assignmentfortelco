@@ -36,7 +36,7 @@ enum FigmaConstants {
         static let borderWidth: CGFloat = 2
         static let radioOuterSize: CGFloat = 34
         static let radioInnerSize: CGFloat = 19
-        static let checkboxIconSize: CGFloat = 24
+        static let checkboxIconSize: CGFloat = 20
     }
 
     enum Opacity {

@@ -26,8 +26,8 @@ struct CountySelectionScreen: View {
         static let totalLabelSize: CGFloat = FigmaConstants.typography.labelSize
         static let totalValueSize: CGFloat = FigmaConstants.typography.displaySize
         static let rowSpacing: CGFloat = FigmaConstants.spacings.mediumSmallPadding
-        static let rowVerticalPadding: CGFloat = FigmaConstants.spacings.compactRowPadding
-        static let rowMinHeight: CGFloat = 44
+        static let rowVerticalPadding: CGFloat = FigmaConstants.spacings.smallPadding
+        static let rowMinHeight: CGFloat = 24
         static let rowIconSize: CGFloat = FigmaConstants.controls.checkboxIconSize
         static let rowTextSize: CGFloat = FigmaConstants.typography.bodySize
         static let rowPriceSize: CGFloat = FigmaConstants.typography.bodySize
