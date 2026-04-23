@@ -87,15 +87,19 @@ struct YettelHomeWorkTests {
     }
 
     @Test func nationalScenarioIncludesTransactionFeeSummaryWhenFeeIsPositive() {
+        let vign = HighwayVignette(vignetteType: ["MONTH"], vehicleCategory: "CAR", cost: 10360, trxFee: 200, sum: 10560)
+        let nvo = NationalVignetteOption(from: HighwayVignette(vignetteType: ["MONTH"], vehicleCategory: "CAR", cost: 10360, trxFee: 200, sum: 10560))!
         let scenario = PurchaseConfirmationScenario.national(
-            vignette: NationalVignetteOption(from: HighwayVignette(vignetteType: ["MONTH"], vehicleCategory: "CAR", cost: 10360, trxFee: 200, sum: 10560))!,
+            vignette: nvo,
             vehiclePlate: "abc-123",
             orderCategory: "CAR"
         )
 
-        #expect(scenario.detailRows.count == 1)
-        #expect(scenario.detailRows.first?.id == "transaction_fee_total")
-        #expect(scenario.detailRows.first?.value == PurchaseConfirmationScenario.localizedPriceText(for:200))
+        #expect(scenario.detailRows.count == 2)
+        #expect(scenario.detailRows.first?.id == nvo.id)
+        #expect(scenario.detailRows.first?.value == PurchaseConfirmationScenario.localizedPriceText(for:vign.cost))
+        #expect(scenario.detailRows[1].id == "transaction_fee_total")
+        #expect(scenario.detailRows[1].value == PurchaseConfirmationScenario.localizedPriceText(for:vign.trxFee))
     }
 
     @Test func countyScenarioOmitsTransactionFeeSummaryWhenFeeIsZero() {
@@ -108,8 +112,11 @@ struct YettelHomeWorkTests {
             orderCategory: "CAR"
         )
 
-        #expect(scenario.detailRows.count == 2)
-        #expect(scenario.detailRows.contains(where: { $0.id == "transaction_fee_total" }) == false)
+        #expect(scenario.detailRows.count == 3)
+        #expect(scenario.detailRows.first?.id == "YEAR_12")
+        #expect(scenario.detailRows.first?.value == PurchaseConfirmationScenario.localizedPriceText(for: 6860))
+        #expect(scenario.detailRows[2].id == "transaction_fee_total")
+        #expect(scenario.detailRows[2].value == PurchaseConfirmationScenario.localizedPriceText(for:0))
     }
 
     @Test func purchaseConfirmationScenarioTotalsAndOrderItemsMatchSelection() {
