@@ -137,7 +137,7 @@ struct NationalVignetteOption: Identifiable {
     let sortOrder: Int
 
     var priceText: String {
-        let formatted = Int(sum)
+        let formatted = Int(cost)
             .formatted(.number.grouping(.automatic).locale(.current))
         let template = String(localized: "common.price_huf_format")
         return String(format: template, locale: .current, formatted)
