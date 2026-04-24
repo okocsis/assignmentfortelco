@@ -11,7 +11,7 @@ final class PurchaseFlowUITests: UITestBaseCase {
                 weekOption.waitForExistence(timeout: UITestTimeouts.long),
                 "Expected national WEEK option '\(UITestIDs.homeNationalWeekOption)' to exist on home screen."
             )
-            XCTAssertEqual(weekOption.value as? String, "6,400 Ft")
+            XCTAssertEqual(weekOption.value as? String, "6,400 HUF")
 
             let purchaseButton = app.buttons[UITestIDs.homeNationalPurchaseButton]
             XCTAssertTrue(
@@ -22,16 +22,16 @@ final class PurchaseFlowUITests: UITestBaseCase {
         }
 
         XCTContext.runActivity(named: "Verify fee row and total on confirmation") { _ in
-            let feeRow = app.otherElements[UITestIDs.confirmationTransactionFeeRow]
+            let feeRow = app.staticTexts[UITestIDs.confirmationTransactionFeeRow]
             XCTAssertTrue(
                 feeRow.waitForExistence(timeout: UITestTimeouts.medium),
                 "Expected transaction fee row on national purchase confirmation screen."
             )
-            XCTAssertEqual(feeRow.value as? String, "200 Ft")
+            XCTAssertEqual(feeRow.value as? String, "200 HUF")
 
             let totalValue = app.staticTexts[UITestIDs.confirmationTotalValue]
             XCTAssertTrue(totalValue.waitForExistence(timeout: UITestTimeouts.medium))
-            XCTAssertEqual(totalValue.label, "6,600 Ft")
+            XCTAssertEqual(totalValue.label, "6,600 HUF")
         }
 
         XCTContext.runActivity(named: "Submit and return to home") { _ in
@@ -61,7 +61,7 @@ final class PurchaseFlowUITests: UITestBaseCase {
 
             let countyTotalValue = app.staticTexts[UITestIDs.countyTotalValue]
             XCTAssertTrue(countyTotalValue.waitForExistence(timeout: UITestTimeouts.medium))
-            XCTAssertEqual(countyTotalValue.label, "13,320 Ft")
+            XCTAssertEqual(countyTotalValue.label, "13,320 HUF")
         }
 
         XCTContext.runActivity(named: "Open purchase confirmation") { _ in
@@ -81,16 +81,16 @@ final class PurchaseFlowUITests: UITestBaseCase {
 
             let totalValue = app.staticTexts[UITestIDs.confirmationTotalValue]
             XCTAssertTrue(totalValue.waitForExistence(timeout: UITestTimeouts.medium))
-            XCTAssertEqual(totalValue.label, "13,720 Ft")
+            XCTAssertEqual(totalValue.label, "13,720 HUF")
         }
 
         XCTContext.runActivity(named: "Verify transaction fee row exists") { _ in
-            let transactionFeeRow = app.otherElements[UITestIDs.confirmationTransactionFeeRow]
+            let transactionFeeRow = app.staticTexts[UITestIDs.confirmationTransactionFeeRow]
             XCTAssertTrue(
                 transactionFeeRow.waitForExistence(timeout: UITestTimeouts.medium),
                 "Expected county purchase confirmation to include transaction fee row '\(UITestIDs.confirmationTransactionFeeRow)'."
             )
-            XCTAssertEqual(transactionFeeRow.value as? String, "400 Ft")
+            XCTAssertEqual(transactionFeeRow.value as? String, "400 HUF")
         }
 
         XCTContext.runActivity(named: "Submit and return home from result") { _ in

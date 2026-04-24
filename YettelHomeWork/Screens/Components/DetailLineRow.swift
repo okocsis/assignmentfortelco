@@ -5,6 +5,7 @@ struct DetailLineRow: View {
     let value: String
     let emphasizedTitle: Bool
     let size: CGFloat
+    let accessibilityIdentifier: String
 
     var body: some View {
         HStack {
@@ -15,6 +16,8 @@ struct DetailLineRow: View {
             Text(value)
                 .font(AppTypography.medium(size))
                 .foregroundStyle(AppTheme.primaryText)
+                .accessibilityIdentifier(accessibilityIdentifier)
+                .accessibilityValue(value)
         }
     }
 }

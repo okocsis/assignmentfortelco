@@ -201,13 +201,15 @@ struct PurchaseConfirmationScreen: View {
                 title: String(localized: "confirmation.vehicle"),
                 value: scenario.vehiclePlate.uppercased(),
                 emphasizedTitle: false,
-                size: PurchaseConfirmationMetrics.rowTextSize
+                size: PurchaseConfirmationMetrics.rowTextSize,
+                accessibilityIdentifier: "confirmation.vehicle"
             )
             DetailLineRow(
                 title: String(localized: "confirmation.product"),
                 value: scenario.productSummary,
                 emphasizedTitle: false,
-                size: PurchaseConfirmationMetrics.rowTextSize
+                size: PurchaseConfirmationMetrics.rowTextSize,
+                accessibilityIdentifier: "confirmation.product"
             )
 
             if !scenario.detailRows.isEmpty {
@@ -218,10 +220,9 @@ struct PurchaseConfirmationScreen: View {
                         title: row.title,
                         value: row.value,
                         emphasizedTitle: row.emphasizedTitle,
-                        size: PurchaseConfirmationMetrics.rowTextSize
+                        size: PurchaseConfirmationMetrics.rowTextSize,
+                        accessibilityIdentifier: "confirmation.row.\(row.id)"
                     )
-                    .accessibilityIdentifier("confirmation.row.\(row.id)")
-                    .accessibilityValue(row.value)
                 }
             }
 
